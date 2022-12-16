@@ -13,4 +13,7 @@ public interface CommentaireInterface {
 
     List<Commentaires> afficherToutComm();
 
+    List<Commentaires> AffichageCommParRegion(Long idregion);
+
+
 }

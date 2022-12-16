@@ -11,6 +11,7 @@ import java.util.Optional;
 
 
 @Service
+@AllArgsConstructor
 public class SitetouristiqueServImplement implements SitetouristiqueInterface {
 
 

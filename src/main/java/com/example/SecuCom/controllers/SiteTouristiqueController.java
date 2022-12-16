@@ -29,22 +29,20 @@ public class SiteTouristiqueController {
     public String CreationDeSite(
             @RequestParam(value = "data") String sitetour,
                                  @RequestParam(value = "file", required = false) MultipartFile file) throws JsonProcessingException{
-        Sitetouristique site = null;
+        Sitetouristique sitetouri = null;
         try {
-            site = new JsonMapper().readValue(sitetour, Sitetouristique.class);
-            System.out.println(site);
+            sitetouri = new JsonMapper().readValue(sitetour, Sitetouristique.class);
+            System.out.println(sitetouri);
         } catch (Exception e) {
-            System.out.println(site);
+            System.out.println(sitetouri);
         }
         try {
-            site.setImagesite(SaveImage.save("site", file, site.getImagesite()));
-
-            //  :::::::::::::: creation de site touristique : :::::::::
+            sitetouri.setImagesite(SaveImage.save("sitetouri", file, sitetouri.getImagesite()));
         } catch (Exception e) {
             // TODO: handle exception
             return "erreur lors de l'importation del'image";
         }
-        sitetouristiqueServImplement.CreerSite(site);
+        sitetouristiqueServImplement.CreerSite(sitetouri);
         return "operation effectuer";
     }
 
