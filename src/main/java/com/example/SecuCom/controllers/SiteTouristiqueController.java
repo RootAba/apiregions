@@ -28,7 +28,7 @@ public class SiteTouristiqueController {
     @PostMapping("/creation")
     public String CreationDeSite(
             @RequestParam(value = "data") String sitetour,
-                                 @RequestParam(value = "file", required = false) MultipartFile file) throws JsonProcessingException{
+            @RequestParam(value = "file", required = false) MultipartFile file) throws JsonProcessingException{
         Sitetouristique sitetouri = null;
         try {
             sitetouri = new JsonMapper().readValue(sitetour, Sitetouristique.class);
