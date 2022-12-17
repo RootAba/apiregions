@@ -21,7 +21,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/regions")
-
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600,allowCredentials = "true")
 @Api(value = "hello", description = "Toutes les opérations concernant la table Région")
 public class RegionController {
 @Autowired
