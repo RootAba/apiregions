@@ -20,6 +20,7 @@ import java.util.List;
 @RequestMapping("/site")
 
 @Api(value = "hello", description = "Toutes les opérations concernant la table Sites touristiques")
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600,allowCredentials = "true")
 public class SiteTouristiqueController {
     @Autowired
     private SitetouristiqueServImplement sitetouristiqueServImplement;
@@ -81,7 +82,7 @@ public class SiteTouristiqueController {
     }
 
     @ApiOperation(value = "Afficher de site touristique d'une region donnée ")
-    @DeleteMapping("/affichersiteregion")
+    @GetMapping("/affichersiteregion/{idregion}")
     public List<Sitetouristique> AfficherSiteRegion(@PathVariable long idregion){
         return sitetouristiqueServImplement.siteParRegion(idregion);
     }

@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/commentaires")
-
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600,allowCredentials = "true")
 @Api(value = "hello", description = "Toutes les opérations concernant la table Commentaires")
 public class CommentairesController {
 
@@ -53,7 +53,7 @@ public class CommentairesController {
     }
 
     @ApiOperation(value = "Affichage des commentaires par regions")
-    @GetMapping("/affichercommentaireRegion")
+    @GetMapping("/affichercommentaireRegion/{idregion}")
     public List<Commentaires> AffichageCommentaireRegion(@PathVariable long idregion){
 
         return commentaireImplementation.AffichageCommParRegion(idregion);

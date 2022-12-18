@@ -2,8 +2,10 @@ package com.example.SecuCom.service;
 
 
 import com.example.SecuCom.models.Regions;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface RegionSevInter {
     //methode permettant d'ajouter des données dans bd
@@ -16,6 +18,8 @@ public interface RegionSevInter {
     Regions modifierRegion(Long idRegions,Regions regions);
 
     String Delete(Long idRegion);
+
+    Optional<Regions> RegionParId(@PathVariable Long idregion);
 
 
 }

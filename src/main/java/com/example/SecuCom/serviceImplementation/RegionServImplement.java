@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -47,5 +48,10 @@ public class RegionServImplement implements RegionSevInter {
     public String Delete(Long idRegion) {
         rr.deleteById(idRegion);
         return "Personne delete avec succes";
+    }
+
+    @Override
+    public Optional<Regions> RegionParId(Long idregion) {
+        return rr.findById(idregion);
     }
 }

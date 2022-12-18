@@ -39,7 +39,7 @@ public class CommentaireImplementation implements CommentaireInterface {
 
         for (Commentaires c:toutscomm){
             try{
-                if(c.getRegions().getIdregion().equals(region)){
+                if(c.getRegions().getIdregion().equals(region.getIdregion())){
                     commentaireAjouter.add(c);
                 }
             } catch (Exception e){

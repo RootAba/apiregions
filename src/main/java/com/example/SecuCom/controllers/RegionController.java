@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/regions")
@@ -96,5 +97,14 @@ public String supprimer(@PathVariable Long idRegion){
     return  reSeImpt.Delete(idRegion);
 }
 
+    @ApiOperation(value = " d'une région")
+    @GetMapping("/regionparid/{idRegion}")
+    public Optional<Regions> RegionParId(@PathVariable Long idRegion){
+
+        return  reSeImpt.RegionParId(idRegion);
+    }
+
 
 }
+
+
