@@ -104,9 +104,10 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
         //.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
         .authorizeRequests().antMatchers(abasse).permitAll()
         .antMatchers("/api/test/**").permitAll()
+            .antMatchers("/regions/**").permitAll()
         .anyRequest().authenticated();
-    http.formLogin();
-    http.oauth2Login();
+    /*http.formLogin();
+    http.oauth2Login();*/
     
     http.authenticationProvider(authenticationProvider());
 

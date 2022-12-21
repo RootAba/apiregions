@@ -35,7 +35,7 @@ private RegionServImplement reSeImpt;
     @PostMapping("/creation")
 
     public  String CreationRegion(@RequestParam(value = "data") String reg,
-                                  @RequestParam(value = "population") String population,
+                                //  @RequestParam(value = "population") String population,
                             //      @RequestParam(value = "user") String userVenant,
                                   @RequestParam(value = "file", required = false) MultipartFile file) throws JsonProcessingException {
         Regions regions = null;
@@ -62,8 +62,8 @@ private RegionServImplement reSeImpt;
         }
         else{
             paysSeImpt.ajouterPays(regions.getPays());
-            population1 = new JsonMapper().readValue(population, Population.class);
-            popServImplement.ajouterPopulation(population1);
+        //    population1 = new JsonMapper().readValue(population, Population.class);
+          //  popServImplement.ajouterPopulation(population1);
             reSeImpt.AjoutRegion(regions);
         }
         return "ajouter avec succes";

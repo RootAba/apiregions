@@ -5,6 +5,7 @@ import com.example.SecuCom.models.Regions;
 import com.example.SecuCom.models.Sitetouristique;
 import com.example.SecuCom.serviceImplementation.SaveImage;
 import com.example.SecuCom.serviceImplementation.SitetouristiqueServImplement;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 import io.swagger.annotations.Api;
@@ -29,11 +30,12 @@ public class SiteTouristiqueController {
     @PostMapping("/creation")
     public String CreationDeSite(
             @RequestParam(value = "data") String sitetour,
-            @RequestParam(value = "file", required = false) MultipartFile file) throws JsonProcessingException{
+            @RequestParam(value = "file", required = false) MultipartFile file) throws  JsonProcessingException
+    {
         Sitetouristique sitetouri = null;
         try {
             sitetouri = new JsonMapper().readValue(sitetour, Sitetouristique.class);
-            System.out.println(sitetouri);
+            System.out.println("dfghj"+sitetouri);
         } catch (Exception e) {
             System.out.println(sitetouri);
         }
